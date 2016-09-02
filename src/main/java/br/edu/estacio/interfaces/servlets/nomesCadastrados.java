@@ -32,7 +32,9 @@ public class nomesCadastrados extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ConvidadoServiceFacade convidadosFacade = (ConvidadoServiceFacade) getServletContext().getAttribute("convidadoFacade");
-		request.getSession().setAttribute("convidados",convidadosFacade.getAllConvidados());
+		if (convidadosFacade!=null){
+			request.getSession().setAttribute("convidados",convidadosFacade.getAllConvidados());
+		}	
 		response.sendRedirect("/servletApp/listar.jsp");
 	}
 
