@@ -9,6 +9,7 @@
 	<title>Cadastrar</title>
 </head>
 <body class="container">
+	<div class="jumbotron"><h2>Cadastro</h2></div>
 	<div class="panel-body">
 		<form action="/servletApp/cadastrar" method="POST">
   			<div class="form-group">
@@ -19,8 +20,9 @@
   			</div>
   			<div class="form-group">
   				<input type="submit" value="Enviar" class="btn btn-primary"/>
+        		<a class="btn btn-primary" href="/servletApp/">Voltar</a>  
   			</div>
   		</form>
-  </div>
+  	</div>
 </body>
 </html>

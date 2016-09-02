@@ -6,8 +6,9 @@
 </head>
 <body>
 <div class="container">
-	<h2>Exemplo de cadastro...</h2>
-	<a href="/servletApp/cadastrar">Cadastrar</a>
+	<div class="jumbotron"><h2>Exemplo de cadastro</h2></div>
+	<a class="btn btn-primary" href="/servletApp/cadastrar">Cadastrar</a>
+	<a class="btn btn-primary" href="/servletApp/listar">Listar</a>
 </div>	
 </body>
 </html>
