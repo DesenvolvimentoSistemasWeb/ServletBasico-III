@@ -1,8 +1,8 @@
-package br.edu.estacio.infrastructure.memory;
+package br.edu.estacio.domain.model.convidados;
 
 import java.util.List;
 
-public interface Repository<T,V> {
+public interface Repository<T> {
 	
 	public T findByName(String nome);
 
@@ -13,5 +13,7 @@ public interface Repository<T,V> {
 	public T delete(int codigo);
 	
 	public List<T> findAll();	
+	
+	public String nextId();
 	
 }

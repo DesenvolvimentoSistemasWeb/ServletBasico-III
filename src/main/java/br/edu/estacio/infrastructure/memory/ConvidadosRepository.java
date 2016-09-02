@@ -1,20 +1,18 @@
 package br.edu.estacio.infrastructure.memory;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 import br.edu.estacio.domain.model.convidados.Convidado;
-import br.edu.estacio.domain.model.convidados.Convidados;
+import br.edu.estacio.domain.model.convidados.Repository;
 
-public class ConvidadosRepository implements Repository<Convidado,Convidados>{
+public class ConvidadosRepository implements Repository<Convidado>{
 
-	private Convidados convs;
-	
-	public ConvidadosRepository() throws InstantiationException, IllegalAccessException{
-		convs = Convidados.class.newInstance();
-	}
+	private List<Convidado> convs = new ArrayList<Convidado>();
 	
 	public Convidado find(int codigo) {
-		for (Convidado convidado: convs.getConvidados()){
+		for (Convidado convidado: convs){
 			if (convidado.getCodigo().equals(codigo)) {
 				return convidado;
 			}
@@ -23,25 +21,31 @@ public class ConvidadosRepository implements Repository<Convidado,Convidados>{
 	}
 
 	public void persist(Convidado t) {
-		convs.addConvidado(t.getNome());
+		convs.add(t);
 	}
 
 	public Convidado delete(int codigo) {
-		return convs.getConvidados().remove(codigo);
+		return convs.remove(codigo);
 	}
 
 	public List<Convidado> findAll() {
-		return convs.getConvidados();
+		return convs;
 	}
 
 	@Override
 	public Convidado findByName(String nome) {
-		for (Convidado convidado: convs.getConvidados()){
+		for (Convidado convidado: convs){
 			if (convidado.getNome().equals(nome)) {
 				return convidado;
 			}
 		}
 		return null;	
+	}
+
+	@Override
+	public String nextId() {
+	    final String random = UUID.randomUUID().toString().toUpperCase();
+		return random.substring(0,random.indexOf("-"));
 	}
 
 }

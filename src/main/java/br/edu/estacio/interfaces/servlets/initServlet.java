@@ -19,8 +19,6 @@ import br.edu.estacio.infrastructure.memory.ConvidadosRepository;
 @WebServlet(value="/cadastrar", name="initServlet")
 public class initServlet extends HttpServlet {
 	
-	private ConvidadosRepository repo;
-	
 	private static final long serialVersionUID = 1L;
        
     /**
@@ -30,10 +28,6 @@ public class initServlet extends HttpServlet {
      */
     public initServlet() throws InstantiationException, IllegalAccessException {
         super();
-        repo = new ConvidadosRepository();
-        Convidado conv = new Convidado();
-        conv.setNome("Welder Mauricio de Souza");
-        repo.persist(conv);
         // TODO Auto-generated constructor stub
     }
 
@@ -42,19 +36,6 @@ public class initServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		Enumeration<String> attrs = getServletContext().getAttributeNames();
-		boolean found=false;
-		while (attrs.hasMoreElements()){
-			String attr = attrs.nextElement();
-			if (attr.equals("repo")) {
-				found=true;
-				break;
-			}
-			
-		}
-		if (! found){
-			getServletContext().setAttribute("repo", repo);
-		}
 		response.sendRedirect("/servletApp/cadastrar.jsp");
 	}
 
