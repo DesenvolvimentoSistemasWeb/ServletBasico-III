@@ -20,7 +20,8 @@
   			</div>
   			<div class="form-group">
   				<input type="submit" value="Enviar" class="btn btn-primary"/>
-        		<a class="btn btn-primary" href="/servletApp/">Voltar</a>  
+        		<a class="btn btn-primary" href="/servletApp/">Voltar</a>
+        		<a class="btn btn-primary" href="/servletApp/listar">Listar</a>  
   			</div>
   		</form>
   	</div>

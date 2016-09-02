@@ -10,6 +10,20 @@
 <body>
 	<div class="container">
 		<div class="jumbotron"><h2>Listagem</h2></div>
+		<div>
+			<table class="table">
+				<thead>
+					<tr>
+						<td>Nomes</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 		<a class="btn btn-primary" href="/servletApp/">Voltar</a>
 	</div>
 </body>

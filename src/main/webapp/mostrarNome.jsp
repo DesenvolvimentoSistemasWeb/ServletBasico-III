@@ -13,7 +13,8 @@
    <div class="container">
    		<div class="jumbotron"><h2>Nome cadastrado</h2></div>
    		<div class="panel-body"><p class="text-primary">Nome: ${nome} </p></div>
-   		<a class="btn btn-primary" href="/servletApp/">Voltar</a> 
+   		<a class="btn btn-primary" href="/servletApp/">Voltar</a>
+   		<a class="btn btn-primary" href="/servletApp/listar">Listar</a> 
    </div>
 </body>
 </html>

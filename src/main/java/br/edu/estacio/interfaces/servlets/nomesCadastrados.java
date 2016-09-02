@@ -1,8 +1,6 @@
-package br.edu.estacio.servlets;
+package br.edu.estacio.interfaces.servlets;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,16 +8,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class initServlet
+ * Servlet implementation class nomesCadastrados
  */
-@WebServlet(value="/cadastrar", name="initServlet")
-public class initServlet extends HttpServlet {
+@WebServlet(value="/listar", name="nomesCadastrados")
+public class nomesCadastrados extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public initServlet() {
+    public nomesCadastrados() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -28,18 +26,15 @@ public class initServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.sendRedirect("/servletApp/cadastrar.jsp");
+		response.sendRedirect("/servletApp/listar.jsp");
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String nome = request.getParameter("nome");
-		//Sending to expression language ${nome} via session 
-		request.getSession().setAttribute("nome", nome);
-		response.sendRedirect("/servletApp/mostrarNome.jsp");
+		// TODO Auto-generated method stub
+		doGet(request, response);
 	}
 
 }
